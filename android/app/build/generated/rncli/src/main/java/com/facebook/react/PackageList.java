@@ -11,7 +11,15 @@ import com.facebook.react.shell.MainReactPackage;
 import java.util.Arrays;
 import java.util.ArrayList;
 
-
+// react-native-gesture-handler
+import com.swmansion.gesturehandler.RNGestureHandlerPackage;
+// react-native-reanimated
+import com.swmansion.reanimated.ReanimatedPackage;
+// react-native-ui-lib
+import com.wix.reactnativeuilib.highlighterview.HighlighterViewPackage;
+import com.wix.reactnativeuilib.keyboardinput.KeyboardInputPackage;
+import com.wix.reactnativeuilib.textinput.TextInputDelKeyHandlerPackage;
+import com.wix.reactnativeuilib.wheelpicker.WheelPickerPackage;
 
 public class PackageList {
   private Application application;
@@ -56,7 +64,13 @@ public class PackageList {
 
   public ArrayList<ReactPackage> getPackages() {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
-      new MainReactPackage(mConfig)
+      new MainReactPackage(mConfig),
+      new RNGestureHandlerPackage(),
+      new ReanimatedPackage(),
+      new HighlighterViewPackage(),
+      new WheelPickerPackage(),
+      new TextInputDelKeyHandlerPackage(),
+      new KeyboardInputPackage(getApplication())
     ));
   }
 }
