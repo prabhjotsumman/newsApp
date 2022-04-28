@@ -7,10 +7,14 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "clean": "npx react-native clean-project-auto"
   },
   "dependencies": {
+    "@react-native-picker/picker": "^2.4.1",
+    "inshorts-api": "^1.0.3",
     "react": "17.0.2",
+    "react-devtools-core": "^4.24.4",
     "react-native": "0.68.1",
     "react-native-gesture-handler": "^2.4.1",
     "react-native-reanimated": "^2.8.0",
@@ -24,6 +28,7 @@
     "eslint": "^7.32.0",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.67.0",
+    "react-native-clean-project": "^4.0.1",
     "react-test-renderer": "17.0.2"
   },
   "jest": {
