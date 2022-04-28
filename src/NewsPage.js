@@ -9,7 +9,7 @@ const NewsPage = () => {
   const { news, fetchMoreNews } = useNews();
 
   const handlePageChange = (newPageIndex, OldPageIndex) => {
-    if (newPageIndex + 5 === news.length) {
+    if (newPageIndex + 10 === news.length) {
       fetchMoreNews();
     }
   };

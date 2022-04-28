@@ -8,7 +8,9 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "clean": "npx react-native clean-project-auto"
+    "clean": "react-native clean-project-auto",
+    "release": "react-native run-android --variant release",
+    "release-aab": "cd android; ./gradlew bundleRelease"
   },
   "dependencies": {
     "@react-native-picker/picker": "^2.4.1",
