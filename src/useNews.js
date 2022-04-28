@@ -2,10 +2,25 @@ import React, { useEffect, useState } from 'react';
 
 import inshorts from 'inshorts-api';
 
+const categories = [
+  'national',
+  'business',
+  'sports',
+  'world',
+  'politics',
+  'technology',
+  'startup',
+  'entertainment',
+  'miscellaneous',
+  'hatke',
+  'science',
+  'automobile',
+];
+
 var options = {
   lang: 'en',
   category: '',
-  numOfResults: 5,
+  numOfResults: 25,
 };
 
 const useNews = () => {
@@ -19,6 +34,8 @@ const useNews = () => {
     } catch (error) {
       console.log(error);
     }
+
+    return () => {};
   }, []);
 
   return {

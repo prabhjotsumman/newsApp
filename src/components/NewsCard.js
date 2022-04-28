@@ -1,10 +1,9 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, ScrollView } from 'react-native';
+import { StyleSheet, SafeAreaView, ScrollView, Linking } from 'react-native';
 
-import Text from 'react-native-ui-lib/text';
-import Card from 'react-native-ui-lib/card';
+import { Text, Card, Button } from 'react-native-ui-lib';
 
-const NewsCard = ({ title, content, image }) => {
+const NewsCard = ({ title, content, image, source }) => {
   return (
     <SafeAreaView style={[styles.container]}>
       <Card flex center onPress={() => console.log('pressed')}>
@@ -18,6 +17,15 @@ const NewsCard = ({ title, content, image }) => {
         <ScrollView style={[styles.textContainer]}>
           <Text style={[styles.highlight]}>{title}</Text>
           <Text style={[styles.description]}>{content}</Text>
+          {source && (
+            <Button
+              link
+              fullWidth={false}
+              style={[styles.readMore]}
+              label={`Read More`}
+              onPress={() => Linking.openURL(source)}
+            />
+          )}
         </ScrollView>
       </Card>
     </SafeAreaView>
@@ -51,6 +59,11 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: 'justify',
     color: 'black',
+  },
+  readMore: {
+    justifyContent: 'flex-end',
+    fontWeight: '700',
+    marginTop: 4,
   },
 });
 

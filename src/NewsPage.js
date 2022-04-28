@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { StyleSheet } from 'react-native';
-import { Carousel, Text } from 'react-native-ui-lib';
+import { Carousel, LoaderScreen } from 'react-native-ui-lib';
 
 import NewsCard from './components/NewsCard';
 import useNews from './useNews';
@@ -10,7 +10,7 @@ const NewsPage = () => {
   const { news } = useNews();
 
   const handlePageChange = (newPageIndex, OldPageIndex) => {};
-  console.log(news);
+  // console.log(news);
 
   return (
     <Carousel horizontal={false} onChangePage={handlePageChange}>
@@ -23,10 +23,11 @@ const NewsPage = () => {
             content={item?.content}
             author={item?.author}
             postedAt={item?.postedAt}
+            source={item?.sourceUrl}
           />
         ))
       ) : (
-        <Text>Loading...</Text>
+        <LoaderScreen message="Loading..." overlay />
       )}
     </Carousel>
   );
