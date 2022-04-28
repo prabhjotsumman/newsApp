@@ -1,16 +1,18 @@
 import React from 'react';
 
-import { StyleSheet } from 'react-native';
 import { Carousel, LoaderScreen } from 'react-native-ui-lib';
 
-import NewsCard from './components/NewsCard';
+import NewsCard from './NewsCard';
 import useNews from './useNews';
 
 const NewsPage = () => {
-  const { news } = useNews();
+  const { news, fetchMoreNews } = useNews();
 
-  const handlePageChange = (newPageIndex, OldPageIndex) => {};
-  // console.log(news);
+  const handlePageChange = (newPageIndex, OldPageIndex) => {
+    if (newPageIndex + 5 === news.length) {
+      fetchMoreNews();
+    }
+  };
 
   return (
     <Carousel horizontal={false} onChangePage={handlePageChange}>
@@ -32,18 +34,5 @@ const NewsPage = () => {
     </Carousel>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 24,
-    borderWidth: 2,
-    borderColor: 'white',
-    height: '100%',
-  },
-  index: {
-    borderWidth: 2,
-    borderColor: 'white',
-  },
-});
 
 export default NewsPage;
