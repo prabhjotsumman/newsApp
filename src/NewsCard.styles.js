@@ -60,6 +60,10 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     flexGrow: 1,
   },
+  timestamp: {
+    color: Colors.grey10,
+    flexGrow: 1,
+  },
 });
 
 export default styles;
