@@ -14,60 +14,158 @@
 12    <uses-permission android:name="android.permission.INTERNET" />
 12-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:4:5-67
 12-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:4:22-64
-13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-13-->[com.facebook.flipper:flipper:0.125.0] /Users/prabh/.gradle/caches/transforms-3/85fdd9af1f70f27ec9080a3596d5a5c1/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:5-76
-13-->[com.facebook.flipper:flipper:0.125.0] /Users/prabh/.gradle/caches/transforms-3/85fdd9af1f70f27ec9080a3596d5a5c1/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:22-73
-14
-15    <application
-15-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:6:5-25:19
-16        android:name="com.shortnews.MainApplication"
-16-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:7:7-38
-17        android:allowBackup="false"
-17-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:11:7-34
-18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-18-->[androidx.core:core:1.6.0] /Users/prabh/.gradle/caches/transforms-3/d97418f29556dc00d9262accd924e8ac/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
-19        android:debuggable="true"
-20        android:icon="@mipmap/ic_launcher"
-20-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:9:7-41
-21        android:label="@string/app_name"
-21-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:8:7-39
-22        android:roundIcon="@mipmap/ic_launcher_round"
-22-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:10:7-52
-23        android:theme="@style/AppTheme"
-23-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:12:7-38
-24        android:usesCleartextTraffic="true" >
-24-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/debug/AndroidManifest.xml:8:9-44
-25        <activity
-25-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/debug/AndroidManifest.xml:11:9-111
-26            android:name="com.facebook.react.devsupport.DevSettingsActivity"
-26-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/debug/AndroidManifest.xml:11:19-83
-27            android:exported="false" />
-27-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/debug/AndroidManifest.xml:11:84-108
-28        <activity
-28-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:13:7-24:18
-29            android:name="com.shortnews.MainActivity"
-29-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:14:9-37
-30            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-30-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:16:9-118
-31            android:exported="true"
-31-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:19:9-32
-32            android:label="@string/app_name"
-32-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:15:9-41
-33            android:launchMode="singleTask"
-33-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:17:9-40
-34            android:windowSoftInputMode="adjustResize" >
-34-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:18:9-51
-35            <intent-filter>
-35-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:20:9-23:25
-36                <action android:name="android.intent.action.MAIN" />
-36-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:21:13-65
-36-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:21:21-62
-37
-38                <category android:name="android.intent.category.LAUNCHER" />
-38-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:22:13-73
-38-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:22:23-70
-39            </intent-filter>
-40        </activity>
-41    </application>
-42
-43</manifest>
+13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+13-->[com.facebook.flipper:flipper:0.125.0] /Users/prabh/.gradle/caches/transforms-3/baef8f9fd5badf25733320d45824ec5a/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:5-76
+13-->[com.facebook.flipper:flipper:0.125.0] /Users/prabh/.gradle/caches/transforms-3/baef8f9fd5badf25733320d45824ec5a/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:22-73
+14    <!-- <uses-sdk android:minSdkVersion="14" /> -->
+15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+15-->[com.google.firebase:firebase-firestore:24.0.1] /Users/prabh/.gradle/caches/transforms-3/b077a090484696ab0b7d9f09ac72817c/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:13:5-79
+15-->[com.google.firebase:firebase-firestore:24.0.1] /Users/prabh/.gradle/caches/transforms-3/b077a090484696ab0b7d9f09ac72817c/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:13:22-76
+16
+17    <application
+17-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:6:5-25:19
+18        android:name="com.shortnews.MainApplication"
+18-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:7:7-38
+19        android:allowBackup="false"
+19-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:11:7-34
+20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+20-->[androidx.core:core:1.6.0] /Users/prabh/.gradle/caches/transforms-3/826bfb294122aa78ed3602b6bf66ff26/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
+21        android:debuggable="true"
+22        android:icon="@mipmap/ic_launcher"
+22-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:9:7-41
+23        android:label="@string/app_name"
+23-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:8:7-39
+24        android:roundIcon="@mipmap/ic_launcher_round"
+24-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:10:7-52
+25        android:theme="@style/AppTheme"
+25-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:12:7-38
+26        android:usesCleartextTraffic="true" >
+26-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/debug/AndroidManifest.xml:8:9-44
+27        <activity
+27-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/debug/AndroidManifest.xml:11:9-111
+28            android:name="com.facebook.react.devsupport.DevSettingsActivity"
+28-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/debug/AndroidManifest.xml:11:19-83
+29            android:exported="false" />
+29-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/debug/AndroidManifest.xml:11:84-108
+30        <activity
+30-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:13:7-24:18
+31            android:name="com.shortnews.MainActivity"
+31-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:14:9-37
+32            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+32-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:16:9-118
+33            android:exported="true"
+33-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:19:9-32
+34            android:label="@string/app_name"
+34-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:15:9-41
+35            android:launchMode="singleTask"
+35-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:17:9-40
+36            android:windowSoftInputMode="adjustResize" >
+36-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:18:9-51
+37            <intent-filter>
+37-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:20:9-23:25
+38                <action android:name="android.intent.action.MAIN" />
+38-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:21:13-65
+38-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:21:21-62
+39
+40                <category android:name="android.intent.category.LAUNCHER" />
+40-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:22:13-73
+40-->/Users/prabh/Documents/Coding Projects/shortnews/android/app/src/main/AndroidManifest.xml:22:23-70
+41            </intent-filter>
+42        </activity>
+43
+44        <meta-data
+44-->[:react-native-firebase_app] /Users/prabh/Documents/Coding Projects/shortnews/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-12:36
+45            android:name="app_data_collection_default_enabled"
+45-->[:react-native-firebase_app] /Users/prabh/Documents/Coding Projects/shortnews/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-63
+46            android:value="true" />
+46-->[:react-native-firebase_app] /Users/prabh/Documents/Coding Projects/shortnews/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-33
+47
+48        <service
+48-->[:react-native-firebase_app] /Users/prabh/Documents/Coding Projects/shortnews/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:9-18:19
+49            android:name="com.google.firebase.components.ComponentDiscoveryService"
+49-->[:react-native-firebase_app] /Users/prabh/Documents/Coding Projects/shortnews/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:18-89
+50            android:directBootAware="true"
+50-->[com.google.firebase:firebase-common:20.0.0] /Users/prabh/.gradle/caches/transforms-3/035c5800d8d02cd58f3bf4ceecd96533/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:35:13-43
+51            android:exported="false" >
+51-->[com.google.firebase:firebase-firestore:24.0.1] /Users/prabh/.gradle/caches/transforms-3/b077a090484696ab0b7d9f09ac72817c/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:19:13-37
+52            <meta-data
+52-->[:react-native-firebase_app] /Users/prabh/Documents/Coding Projects/shortnews/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-17:85
+53                android:name="com.google.firebase.components:io.invertase.firebase.app.ReactNativeFirebaseAppRegistrar"
+53-->[:react-native-firebase_app] /Users/prabh/Documents/Coding Projects/shortnews/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:17-120
+54                android:value="com.google.firebase.components.ComponentRegistrar" />
+54-->[:react-native-firebase_app] /Users/prabh/Documents/Coding Projects/shortnews/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:17-82
+55            <meta-data
+55-->[com.google.firebase:firebase-firestore:24.0.1] /Users/prabh/.gradle/caches/transforms-3/b077a090484696ab0b7d9f09ac72817c/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:20:13-22:85
+56                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+56-->[com.google.firebase:firebase-firestore:24.0.1] /Users/prabh/.gradle/caches/transforms-3/b077a090484696ab0b7d9f09ac72817c/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:21:17-111
+57                android:value="com.google.firebase.components.ComponentRegistrar" />
+57-->[com.google.firebase:firebase-firestore:24.0.1] /Users/prabh/.gradle/caches/transforms-3/b077a090484696ab0b7d9f09ac72817c/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:22:17-82
+58        </service>
+59
+60        <provider
+60-->[:react-native-firebase_app] /Users/prabh/Documents/Coding Projects/shortnews/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:9-24:38
+61            android:name="io.invertase.firebase.app.ReactNativeFirebaseAppInitProvider"
+61-->[:react-native-firebase_app] /Users/prabh/Documents/Coding Projects/shortnews/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-88
+62            android:authorities="com.shortnews.reactnativefirebaseappinitprovider"
+62-->[:react-native-firebase_app] /Users/prabh/Documents/Coding Projects/shortnews/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:13-86
+63            android:exported="false"
+63-->[:react-native-firebase_app] /Users/prabh/Documents/Coding Projects/shortnews/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-37
+64            android:initOrder="99" />
+64-->[:react-native-firebase_app] /Users/prabh/Documents/Coding Projects/shortnews/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:13-35
+65
+66        <activity
+66-->[com.google.android.gms:play-services-auth:20.1.0] /Users/prabh/.gradle/caches/transforms-3/c643a0d7efb1e1891e3081bd1be160bd/transformed/jetified-play-services-auth-20.1.0/AndroidManifest.xml:23:9-27:75
+67            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+67-->[com.google.android.gms:play-services-auth:20.1.0] /Users/prabh/.gradle/caches/transforms-3/c643a0d7efb1e1891e3081bd1be160bd/transformed/jetified-play-services-auth-20.1.0/AndroidManifest.xml:24:13-93
+68            android:excludeFromRecents="true"
+68-->[com.google.android.gms:play-services-auth:20.1.0] /Users/prabh/.gradle/caches/transforms-3/c643a0d7efb1e1891e3081bd1be160bd/transformed/jetified-play-services-auth-20.1.0/AndroidManifest.xml:25:13-46
+69            android:exported="false"
+69-->[com.google.android.gms:play-services-auth:20.1.0] /Users/prabh/.gradle/caches/transforms-3/c643a0d7efb1e1891e3081bd1be160bd/transformed/jetified-play-services-auth-20.1.0/AndroidManifest.xml:26:13-37
+70            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+70-->[com.google.android.gms:play-services-auth:20.1.0] /Users/prabh/.gradle/caches/transforms-3/c643a0d7efb1e1891e3081bd1be160bd/transformed/jetified-play-services-auth-20.1.0/AndroidManifest.xml:27:13-72
+71        <!--
+72            Service handling Google Sign-In user revocation. For apps that do not integrate with
+73            Google Sign-In, this service will never be started.
+74        -->
+75        <service
+75-->[com.google.android.gms:play-services-auth:20.1.0] /Users/prabh/.gradle/caches/transforms-3/c643a0d7efb1e1891e3081bd1be160bd/transformed/jetified-play-services-auth-20.1.0/AndroidManifest.xml:33:9-37:51
+76            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+76-->[com.google.android.gms:play-services-auth:20.1.0] /Users/prabh/.gradle/caches/transforms-3/c643a0d7efb1e1891e3081bd1be160bd/transformed/jetified-play-services-auth-20.1.0/AndroidManifest.xml:34:13-89
+77            android:exported="true"
+77-->[com.google.android.gms:play-services-auth:20.1.0] /Users/prabh/.gradle/caches/transforms-3/c643a0d7efb1e1891e3081bd1be160bd/transformed/jetified-play-services-auth-20.1.0/AndroidManifest.xml:35:13-36
+78            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+78-->[com.google.android.gms:play-services-auth:20.1.0] /Users/prabh/.gradle/caches/transforms-3/c643a0d7efb1e1891e3081bd1be160bd/transformed/jetified-play-services-auth-20.1.0/AndroidManifest.xml:36:13-107
+79            android:visibleToInstantApps="true" />
+79-->[com.google.android.gms:play-services-auth:20.1.0] /Users/prabh/.gradle/caches/transforms-3/c643a0d7efb1e1891e3081bd1be160bd/transformed/jetified-play-services-auth-20.1.0/AndroidManifest.xml:37:13-48
+80
+81        <activity
+81-->[com.google.android.gms:play-services-base:18.0.1] /Users/prabh/.gradle/caches/transforms-3/07e00fd4a881a5e0977285b218ec9906/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+82            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+82-->[com.google.android.gms:play-services-base:18.0.1] /Users/prabh/.gradle/caches/transforms-3/07e00fd4a881a5e0977285b218ec9906/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+83            android:exported="false"
+83-->[com.google.android.gms:play-services-base:18.0.1] /Users/prabh/.gradle/caches/transforms-3/07e00fd4a881a5e0977285b218ec9906/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+84            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+84-->[com.google.android.gms:play-services-base:18.0.1] /Users/prabh/.gradle/caches/transforms-3/07e00fd4a881a5e0977285b218ec9906/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+85
+86        <provider
+86-->[com.google.firebase:firebase-common:20.0.0] /Users/prabh/.gradle/caches/transforms-3/035c5800d8d02cd58f3bf4ceecd96533/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:26:9-31:39
+87            android:name="com.google.firebase.provider.FirebaseInitProvider"
+87-->[com.google.firebase:firebase-common:20.0.0] /Users/prabh/.gradle/caches/transforms-3/035c5800d8d02cd58f3bf4ceecd96533/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:27:13-77
+88            android:authorities="com.shortnews.firebaseinitprovider"
+88-->[com.google.firebase:firebase-common:20.0.0] /Users/prabh/.gradle/caches/transforms-3/035c5800d8d02cd58f3bf4ceecd96533/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:28:13-72
+89            android:directBootAware="true"
+89-->[com.google.firebase:firebase-common:20.0.0] /Users/prabh/.gradle/caches/transforms-3/035c5800d8d02cd58f3bf4ceecd96533/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:29:13-43
+90            android:exported="false"
+90-->[com.google.firebase:firebase-common:20.0.0] /Users/prabh/.gradle/caches/transforms-3/035c5800d8d02cd58f3bf4ceecd96533/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:30:13-37
+91            android:initOrder="100" />
+91-->[com.google.firebase:firebase-common:20.0.0] /Users/prabh/.gradle/caches/transforms-3/035c5800d8d02cd58f3bf4ceecd96533/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:31:13-36
+92
+93        <meta-data
+93-->[com.google.android.gms:play-services-basement:18.0.0] /Users/prabh/.gradle/caches/transforms-3/be944647bfd82958aafff760cc43d854/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:21:9-23:69
+94            android:name="com.google.android.gms.version"
+94-->[com.google.android.gms:play-services-basement:18.0.0] /Users/prabh/.gradle/caches/transforms-3/be944647bfd82958aafff760cc43d854/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:22:13-58
+95            android:value="@integer/google_play_services_version" />
+95-->[com.google.android.gms:play-services-basement:18.0.0] /Users/prabh/.gradle/caches/transforms-3/be944647bfd82958aafff760cc43d854/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:23:13-66
+96    </application>
+97
+98</manifest>
