@@ -1,14 +1,17 @@
 import React from 'react';
 
 import { SafeAreaView } from 'react-native';
+import ActionBarProvider from './src/BottomActionBar/Provider';
 
 import NewsPage from './src/NewsPage';
 
 const App = () => {
   return (
-    <SafeAreaView>
-      <NewsPage />
-    </SafeAreaView>
+    <ActionBarProvider>
+      <SafeAreaView>
+        <NewsPage />
+      </SafeAreaView>
+    </ActionBarProvider>
   );
 };
 
