@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import { SafeAreaView } from 'react-native';
 import { Carousel, Toast } from 'react-native-ui-lib';
+
 import BottomActionBar from './BottomActionBar/BottomActionBar';
 import useBottomActionBar from './BottomActionBar/useBottomActionBar';
 
@@ -13,13 +14,11 @@ const NewsPage = () => {
   const ref = useRef();
 
   const { fetchNews } = useNews();
-  const { homePressed, refreshPressed } = useBottomActionBar();
+  const { showActionBar, setActionBar, homePressed, refreshPressed } =
+    useBottomActionBar();
 
   const [news, setNews] = useState([]);
   const [refresh, setRefresh] = useState(false);
-  const [showActionBar, setActionBar] = useState(false);
-
-  const handleCardPress = () => setActionBar(!showActionBar);
 
   async function getNews() {
     const news = await fetchNews();
@@ -40,6 +39,15 @@ const NewsPage = () => {
     getNews();
   }, [refreshPressed]);
 
+  const handleCardPress = () => setActionBar(!showActionBar);
+
+  const handleSwipeNext = () => ref?.current?.goToNextPage();
+
+  const handleSwipePrev = () => {
+    const currentPage = ref?.current?.state?.currentPage;
+    ref.current?.goToPage(currentPage - 1);
+  };
+
   return (
     <SafeAreaView style={{ marginHorizontal: 4 }}>
       <Carousel horizontal={false} showCounter animated ref={ref}>
@@ -47,14 +55,16 @@ const NewsPage = () => {
           [...news].map((item, index) => (
             <NewsCard
               key={index}
+              description={item?.description}
               title={item?.title}
-              image={item?.imageUrl}
-              content={item?.description}
+              imageUrl={item?.imageUrl}
               author={item?.author}
-              postedAt={item?.postedAt}
               source={item?.source}
+              timestamp={item?.timestamp}
               articleUrl={item?.articleUrl}
               onCardPress={handleCardPress}
+              swipeNext={handleSwipeNext}
+              swipePrev={handleSwipePrev}
             />
           ))}
       </Carousel>
@@ -64,7 +74,6 @@ const NewsPage = () => {
         position={'top'}
         message={'Fetching latest news...'}
         showLoader
-        swipeable
         centerMessage
         icon={refreshIcon}
         autoDismiss={2000}
