@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 
 import Context from './Context';
+import useShare from '../useShare';
 
 const Provider = ({ children }) => {
   const [fontSize, setFontSize] = useState(20);
   const [homePressed, setHomePressed] = useState(0);
   const [refreshPressed, setRefreshPressed] = useState(0);
+  const [showActionBar, setActionBar] = useState(false);
+
+  const { takeScreenShot } = useShare();
 
   const handleFontIncrease = () => {
     if (fontSize < 25) setFontSize(fontSize + 1);
@@ -17,9 +21,14 @@ const Provider = ({ children }) => {
 
   const handleHome = () => setHomePressed(homePressed + 1);
 
-  const handleShare = () => {};
+  const handleShare = () => {
+    setActionBar(false);
+    takeScreenShot();
+  };
 
   const handleRefresh = () => setRefreshPressed(refreshPressed + 1);
+
+  const handleActionBar = state => setActionBar(state);
 
   return (
     <Context.Provider
@@ -32,6 +41,8 @@ const Provider = ({ children }) => {
         fontSize,
         homePressed,
         refreshPressed,
+        showActionBar,
+        setActionBar: handleActionBar,
       }}>
       {children}
     </Context.Provider>
