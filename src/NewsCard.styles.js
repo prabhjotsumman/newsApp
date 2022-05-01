@@ -1,5 +1,7 @@
 import { StyleSheet } from 'react-native';
 
+import { Colors } from 'react-native-ui-lib';
+
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 4,
@@ -12,8 +14,9 @@ const styles = StyleSheet.create({
     paddingTop: 0,
     paddingBottom: 10,
   },
-  textContainer: {
+  contentContainer: {
     paddingHorizontal: 20,
+    height: '24%',
   },
   highlight: {
     fontWeight: '700',
@@ -27,12 +30,37 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: 'justify',
     color: 'black',
-    paddingBottom: 4,
+    paddingBottom: 10,
+    overflow: 'scroll',
   },
   readMore: {
     justifyContent: 'flex-end',
     fontWeight: '700',
-    marginTop: 4,
+    height: 30,
+  },
+  linkContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    borderTopWidth: 1,
+    paddingTop: 10,
+    borderTopColor: Colors.grey50,
+    marginHorizontal: 20,
+  },
+  moreInfoContainer: {
+    flexDirection: 'row',
+  },
+  shortenByContainer: {
+    flexDirection: 'row',
+    flexGrow: 1,
+  },
+  shortenBy: {
+    color: Colors.grey30,
+  },
+  author: {
+    color: Colors.grey10,
+    fontWeight: '600',
+    flexGrow: 1,
   },
 });
 

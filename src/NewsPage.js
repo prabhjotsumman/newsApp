@@ -6,26 +6,21 @@ import NewsCard from './NewsCard';
 import useNews from './useNews';
 
 const NewsPage = () => {
-  const { news, fetchMoreNews } = useNews();
-
-  const handlePageChange = (newPageIndex, OldPageIndex) => {
-    if (newPageIndex + 10 === news.length) {
-      fetchMoreNews();
-    }
-  };
+  const { news } = useNews();
 
   return (
-    <Carousel horizontal={false} onChangePage={handlePageChange}>
+    <Carousel horizontal={false}>
       {news.length ? (
         news.map((item, index) => (
           <NewsCard
             key={index}
             title={item?.title}
-            image={item?.imageUri}
-            content={item?.content}
+            image={item?.imageUrl}
+            content={item?.description}
             author={item?.author}
             postedAt={item?.postedAt}
-            source={item?.sourceUrl}
+            source={item?.source}
+            articleUrl={item?.articleUrl}
           />
         ))
       ) : (

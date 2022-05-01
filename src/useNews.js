@@ -1,52 +1,23 @@
 import { useEffect, useState } from 'react';
 
-import inshorts from './inshorts-api';
+import firestore from '@react-native-firebase/firestore';
 
 const useNews = () => {
   const [news, setNews] = useState([]);
-  const [category, setCategory] = useState(0);
-
-  const categories = [
-    'national',
-    'business',
-    'sports',
-    'world',
-    'politics',
-    'technology',
-    'startup',
-    'entertainment',
-    'miscellaneous',
-    'hatke',
-    'science',
-    'automobile',
-  ];
-
-  const fetchMoreNews = () => {
-    try {
-      const options = {
-        lang: 'en',
-        category: categories[category],
-        numOfResults: 25,
-      };
-
-      inshorts.get(options, function (result) {
-        setNews([...news, ...result]);
-        if (category < categories.length) {
-          setCategory(category + 1);
-        }
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   useEffect(() => {
-    fetchMoreNews();
+    async function fetchNews() {
+      const news = await firestore().collection('news').get();
+      const dataStore = news._docs;
+      const newsDocs = dataStore.map(dataItem => dataItem._data);
+      console.log(' NEWS: ', newsDocs);
+      setNews(newsDocs);
+    }
+    fetchNews();
   }, []);
 
   return {
     news,
-    fetchMoreNews,
   };
 };
 
