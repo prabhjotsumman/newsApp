@@ -21,6 +21,8 @@ import com.reactnativecommunity.picker.RNCPickerPackage;
 import com.swmansion.gesturehandler.RNGestureHandlerPackage;
 // react-native-reanimated
 import com.swmansion.reanimated.ReanimatedPackage;
+// react-native-share
+import cl.json.RNSharePackage;
 // react-native-svg
 import com.horcrux.svg.SvgPackage;
 // react-native-ui-lib
@@ -28,6 +30,8 @@ import com.wix.reactnativeuilib.highlighterview.HighlighterViewPackage;
 import com.wix.reactnativeuilib.keyboardinput.KeyboardInputPackage;
 import com.wix.reactnativeuilib.textinput.TextInputDelKeyHandlerPackage;
 import com.wix.reactnativeuilib.wheelpicker.WheelPickerPackage;
+// react-native-view-shot
+import fr.greweb.reactnativeviewshot.RNViewShotPackage;
 
 public class PackageList {
   private Application application;
@@ -78,11 +82,13 @@ public class PackageList {
       new RNCPickerPackage(),
       new RNGestureHandlerPackage(),
       new ReanimatedPackage(),
+      new RNSharePackage(),
       new SvgPackage(),
       new HighlighterViewPackage(),
       new WheelPickerPackage(),
       new TextInputDelKeyHandlerPackage(),
-      new KeyboardInputPackage(getApplication())
+      new KeyboardInputPackage(getApplication()),
+      new RNViewShotPackage()
     ));
   }
 }
