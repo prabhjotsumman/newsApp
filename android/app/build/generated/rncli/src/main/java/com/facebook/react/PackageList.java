@@ -21,6 +21,8 @@ import com.reactnativecommunity.picker.RNCPickerPackage;
 import com.swmansion.gesturehandler.RNGestureHandlerPackage;
 // react-native-reanimated
 import com.swmansion.reanimated.ReanimatedPackage;
+// react-native-svg
+import com.horcrux.svg.SvgPackage;
 // react-native-ui-lib
 import com.wix.reactnativeuilib.highlighterview.HighlighterViewPackage;
 import com.wix.reactnativeuilib.keyboardinput.KeyboardInputPackage;
@@ -76,6 +78,7 @@ public class PackageList {
       new RNCPickerPackage(),
       new RNGestureHandlerPackage(),
       new ReanimatedPackage(),
+      new SvgPackage(),
       new HighlighterViewPackage(),
       new WheelPickerPackage(),
       new TextInputDelKeyHandlerPackage(),
