@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 import { SafeAreaView } from 'react-native';
-import { Carousel, Toast } from 'react-native-ui-lib';
+import { Carousel, Toast, ToastPresets } from 'react-native-ui-lib';
 
 import BottomActionBar from './BottomActionBar/BottomActionBar';
 import useBottomActionBar from './BottomActionBar/useBottomActionBar';
@@ -19,11 +19,12 @@ const NewsPage = () => {
 
   const [news, setNews] = useState([]);
   const [refresh, setRefresh] = useState(false);
+  const [message, setMessage] = useState(false);
 
   async function getNews() {
     const news = await fetchNews();
     setNews([...news]);
-    setRefresh(false);
+    setTimeout(() => setRefresh(false), 800);
   }
 
   useEffect(() => {
@@ -37,15 +38,27 @@ const NewsPage = () => {
   useEffect(() => {
     setRefresh(true);
     getNews();
+    ref.current?.goToPage(0);
   }, [refreshPressed]);
 
   const handleCardPress = () => setActionBar(!showActionBar);
 
-  const handleSwipeNext = () => ref?.current?.goToNextPage();
+  const handleSwipeNext = () => {
+    const currentPage = ref?.current?.state?.currentPage;
+    ref?.current?.goToNextPage();
+    if (currentPage >= news?.length - 1) {
+      setMessage(true);
+    }
+  };
 
   const handleSwipePrev = () => {
     const currentPage = ref?.current?.state?.currentPage;
     ref.current?.goToPage(currentPage - 1);
+    if (currentPage < 1) {
+      setRefresh(true);
+      getNews();
+      ref.current?.goToPage(0);
+    }
   };
 
   return (
@@ -72,12 +85,22 @@ const NewsPage = () => {
       <Toast
         visible={refresh}
         position={'top'}
-        message={'Fetching latest news...'}
+        message={'ਤਾਜ਼ਾ ਖ਼ਬਰਾਂ ਪ੍ਰਾਪਤ ਕੀਤੀਆਂ ਜਾ ਰਹੀਆਂ ਹਨ...'}
         showLoader
         centerMessage
         icon={refreshIcon}
         autoDismiss={2000}
         onDismiss={() => setRefresh(false)}
+      />
+
+      <Toast
+        visible={message}
+        position={'top'}
+        message={'ਅੱਜ ਦੇ ਲਈ ਬੱਸ ਏਨਾ ਹੀ...'}
+        preset={ToastPresets.SUCCESS}
+        centerMessage
+        autoDismiss={2000}
+        onDismiss={() => setMessage(false)}
       />
 
       {showActionBar && <BottomActionBar />}
