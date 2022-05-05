@@ -4,7 +4,7 @@ import Context from './Context';
 import useShare from '../useShare';
 
 const Provider = ({ children }) => {
-  const [fontSize, setFontSize] = useState(20);
+  const [fontSize, setFontSize] = useState(21);
   const [homePressed, setHomePressed] = useState(0);
   const [refreshPressed, setRefreshPressed] = useState(0);
   const [showActionBar, setActionBar] = useState(false);
@@ -12,7 +12,7 @@ const Provider = ({ children }) => {
   const { takeScreenShot } = useShare();
 
   const handleFontIncrease = () => {
-    if (fontSize < 25) setFontSize(fontSize + 1);
+    if (fontSize < 23) setFontSize(fontSize + 1);
   };
 
   const handleFontDecrease = () => {

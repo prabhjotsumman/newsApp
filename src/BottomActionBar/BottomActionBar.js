@@ -1,7 +1,7 @@
 import React from 'react';
 import { ActionBar, Colors } from 'react-native-ui-lib';
 
-import homeIcon from '../assets/images/home.png';
+// import homeIcon from '../assets/images/home.png';
 import increaseFontSizeIcon from '../assets/images/resize-font.png';
 import decreaseFontSizeIcon from '../assets/images/resize-font-decrease.png';
 import shareIcon from '../assets/images/share.png';
@@ -15,27 +15,27 @@ const BottomActionBar = () => {
   const actionBarIcons = [
     {
       iconSource: decreaseFontSizeIcon,
-      label: 'Decrease',
+      // label: 'Decrease',
       onPress: onFontDecrease,
     },
     {
       iconSource: increaseFontSizeIcon,
-      label: 'Increase',
+      // label: 'Increase',
       onPress: onFontIncrease,
     },
-    {
-      iconSource: homeIcon,
-      label: 'Home',
-      onPress: onHome,
-    },
+    // {
+    //   iconSource: homeIcon,
+    //   label: 'Home',
+    //   onPress: onHome,
+    // },
     {
       iconSource: shareIcon,
-      label: 'Share',
+      // label: 'Share',
       onPress: onShare,
     },
     {
       iconSource: refreshIcon,
-      label: 'Refresh',
+      // label: 'Refresh',
       onPress: onRefresh,
     },
   ];
