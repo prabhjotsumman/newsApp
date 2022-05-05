@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     paddingHorizontal: 20,
-    height: '24%',
+    height: '40%',
     width: '100%',
   },
   highlight: {
@@ -32,18 +32,12 @@ const styles = StyleSheet.create({
     overflow: 'scroll',
   },
   readMore: {
-    justifyContent: 'flex-end',
-    fontWeight: '700',
-    height: 30,
+    width: '100%',
   },
   linkContainer: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    borderTopWidth: 1,
-    paddingTop: 10,
-    borderTopColor: Colors.grey50,
-    marginHorizontal: 20,
   },
   moreInfoContainer: {
     flexDirection: 'row',
@@ -54,15 +48,34 @@ const styles = StyleSheet.create({
   },
   shortenBy: {
     color: Colors.grey30,
+    textAlign: 'right',
+    flex: 1,
+    alignSelf: 'flex-end',
   },
   author: {
     color: Colors.grey10,
     fontWeight: '600',
     flexGrow: 1,
+    textAlign: 'right',
+    borderWidth: 2,
   },
   timestamp: {
-    color: Colors.grey10,
+    color: Colors.grey40,
     flexGrow: 1,
+    textAlign: 'left',
+  },
+  ctaContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  tapToReadMore: {
+    color: Colors.white,
+    textAlign: 'right',
+  },
+  source: {
+    color: Colors.white,
+    fontWeight: '700',
+    flex: 1,
   },
 });
 

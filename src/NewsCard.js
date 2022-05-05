@@ -42,34 +42,33 @@ const NewsCard = ({
 
         <ScrollView style={[styles.contentContainer]} decelerationRate={0.5}>
           <Text style={[styles.highlight, { fontSize }]}>{title}</Text>
+          <View style={[styles.linkContainer]} flex>
+            {timestamp && (
+              <View style={[styles.shortenByContainer]}>
+                <Text style={[styles.timestamp]}>
+                  {new Date(timestamp).toDateString()}
+                </Text>
+              </View>
+            )}
+            {source && (
+              <View style={[styles.shortenByContainer]}>
+                <Text style={[styles.shortenBy]}>ਸਰੋਤ - {source}</Text>
+              </View>
+            )}
+          </View>
           <Text style={[styles.description, { fontSize: fontSize - 4 }]}>
             {description}
           </Text>
         </ScrollView>
-        <View style={[styles.linkContainer]} flex>
-          {source && (
-            <View style={[styles.shortenByContainer]}>
-              <Text style={[styles.shortenBy]}>ਸਰੋਤ - </Text>
-              <Text style={[styles.author]}>{source}</Text>
-            </View>
-          )}
-          {timestamp && (
-            <View style={[styles.shortenByContainer]}>
-              <Text style={[styles.timestamp]}>
-                {new Date(timestamp).toDateString()}
-              </Text>
-            </View>
-          )}
-          {articleUrl && (
-            <Button
-              size="small"
-              fullWidth={false}
-              style={[styles.readMore]}
-              label={`ਹੋਰ ਪੜ੍ਹੋ`}
-              onPress={() => Linking.openURL(articleUrl)}
-            />
-          )}
-        </View>
+        <Button
+          fullWidth={true}
+          style={[styles.readMore]}
+          onPress={() => Linking.openURL(articleUrl)}>
+          <View style={[styles.ctaContainer]}>
+            <Text
+              style={[styles.tapToReadMore]}>{`ਹੋਰ ਪੜ੍ਹਨ ਲਈ ਟੈਪ ਕਰੋ `}</Text>
+          </View>
+        </Button>
       </Card>
     </SafeAreaView>
   );
