@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:841077036367:android:9fc049dae15e0b4793213a",
+        "mobilesdk_app_id": "1:841077036367:android:17cc78deba18d7b293213a",
         "android_client_info": {
-          "package_name": "com.shortnews"
+          "package_name": "com.shortkhabar"
         }
       },
       "oauth_client": [

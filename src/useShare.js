@@ -12,7 +12,7 @@ const useShare = () => {
         //callback function to get the result URL of the screenshot
         uri => {
           const message =
-            'Download ShortNews app now to get the latest news.\nhttps://play.google.com/store/apps/details?id=com.shortnews';
+            'Download ShortNews app now to get the latest news.\nhttps://play.google.com/store/apps/details?id=com.shortkhabar';
           let shareImage = {
             title: message,
             message,
