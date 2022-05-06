@@ -1,4 +1,4 @@
-package com.shortnews.newarchitecture.modules;
+package com.shortkhabar.newarchitecture.modules;
 
 import com.facebook.jni.HybridData;
 import com.facebook.react.ReactPackage;
