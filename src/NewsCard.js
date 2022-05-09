@@ -30,8 +30,8 @@ const NewsCard = ({
         onPressIn={e => setPressIn(e.nativeEvent.pageY)}
         onPressOut={e => {
           const pressOut = e.nativeEvent.pageY;
-          if (pressIn - pressOut > 3) swipeNext();
-          if (pressOut - pressIn > 3) swipePrev();
+          // if (pressIn - pressOut > 3) swipeNext();
+          // if (pressOut - pressIn > 3) swipePrev();
         }}>
         <Card.Image
           source={{
