@@ -8,14 +8,21 @@ import useBottomActionBar from './BottomActionBar/useBottomActionBar';
 
 import refreshIcon from './assets/images/refresh-arrow.png';
 import NewsCard from './NewsCard';
+import ContactPage from './ContactPage/ContactPage';
 import useNews from './useNews';
 
 const NewsPage = () => {
   const ref = useRef();
 
   const { fetchNews } = useNews();
-  const { showActionBar, setActionBar, homePressed, refreshPressed } =
-    useBottomActionBar();
+  const {
+    showActionBar,
+    setActionBar,
+    homePressed,
+    refreshPressed,
+    showContactDialog,
+    onContact,
+  } = useBottomActionBar();
 
   const [news, setNews] = useState([]);
   const [refresh, setRefresh] = useState(false);
@@ -63,6 +70,7 @@ const NewsPage = () => {
 
   return (
     <SafeAreaView style={{ marginHorizontal: 4 }}>
+      <ContactPage show={showContactDialog} onDismiss={onContact} />
       <Carousel horizontal={false} showCounter animated ref={ref}>
         {news.length &&
           [...news].map((item, index) => (

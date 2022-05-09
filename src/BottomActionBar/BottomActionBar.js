@@ -6,10 +6,11 @@ import increaseFontSizeIcon from '../assets/images/resize-font.png';
 import decreaseFontSizeIcon from '../assets/images/resize-font-decrease.png';
 import shareIcon from '../assets/images/share.png';
 import refreshIcon from '../assets/images/refresh-arrow.png';
+import contactUsIcon from '../assets/images/contact_us.png';
 import useBottomActionBar from './useBottomActionBar';
 
 const BottomActionBar = () => {
-  const { onFontDecrease, onFontIncrease, onHome, onShare, onRefresh } =
+  const { onFontDecrease, onFontIncrease, onContact, onShare, onRefresh } =
     useBottomActionBar();
 
   const actionBarIcons = [
@@ -23,11 +24,6 @@ const BottomActionBar = () => {
       // label: 'Increase',
       onPress: onFontIncrease,
     },
-    // {
-    //   iconSource: homeIcon,
-    //   label: 'Home',
-    //   onPress: onHome,
-    // },
     {
       iconSource: shareIcon,
       // label: 'Share',
@@ -37,6 +33,11 @@ const BottomActionBar = () => {
       iconSource: refreshIcon,
       // label: 'Refresh',
       onPress: onRefresh,
+    },
+    {
+      iconSource: contactUsIcon,
+      // label: '',
+      onPress: onContact,
     },
   ];
 

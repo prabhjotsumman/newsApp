@@ -8,6 +8,7 @@ const Provider = ({ children }) => {
   const [homePressed, setHomePressed] = useState(0);
   const [refreshPressed, setRefreshPressed] = useState(0);
   const [showActionBar, setActionBar] = useState(false);
+  const [showContactDialog, setShowContactDialog] = useState(false);
 
   const { takeScreenShot } = useShare();
 
@@ -30,6 +31,10 @@ const Provider = ({ children }) => {
 
   const handleActionBar = state => setActionBar(state);
 
+  const handleOnContact = () => {
+    setShowContactDialog(!showContactDialog);
+  };
+
   return (
     <Context.Provider
       value={{
@@ -38,11 +43,13 @@ const Provider = ({ children }) => {
         onHome: handleHome,
         onShare: handleShare,
         onRefresh: handleRefresh,
+        onContact: handleOnContact,
+        setActionBar: handleActionBar,
         fontSize,
         homePressed,
         refreshPressed,
         showActionBar,
-        setActionBar: handleActionBar,
+        showContactDialog,
       }}>
       {children}
     </Context.Provider>
